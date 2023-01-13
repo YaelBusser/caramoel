@@ -1,3 +1,4 @@
+import 'package:caramoel/utils/dimensions.dart';
 import 'package:flutter/cupertino.dart';
 
 // ignore: must_be_immutable
@@ -22,7 +23,7 @@ class BigText extends StatelessWidget {
         color: color,
         fontWeight: FontWeight.w400,
         fontFamily: "Roboto",
-        fontSize: size,
+        fontSize: Dimensions.font20,
       ),
     );
   }
