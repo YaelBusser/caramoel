@@ -1,4 +1,5 @@
 import 'package:caramoel/colors.dart';
+import 'package:caramoel/home/food_page_body.dart';
 import 'package:caramoel/widgets/big_text.dart';
 import 'package:caramoel/widgets/small_text.dart';
 import 'package:flutter/material.dart';
@@ -54,6 +55,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
             ),
           ),
         ),
+        FoodPageBody(),
       ],
     ));
   }
