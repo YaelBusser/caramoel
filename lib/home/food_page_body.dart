@@ -87,7 +87,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               Container(
                 margin: const EdgeInsets.only(bottom: 3),
                 child: SmallText(
-                  text: "Restaurants",
+                  text: "Les restaurants préférés à Camoël",
                   color: AppColors.signColor,
                 ),
               )
@@ -95,25 +95,77 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         Container(
-          height: 700,
           child: ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
               itemCount: 10,
               itemBuilder: (context, index) {
                 return Container(
                   margin: EdgeInsets.only(
-                      left: Dimensions.width20, right: Dimensions.width20),
+                      left: Dimensions.width20,
+                      right: Dimensions.width20,
+                      bottom: Dimensions.height10),
                   child: Row(children: [
                     Container(
-                      width: 120,
-                      height: 120,
+                      width: Dimensions.listViewImgSize,
+                      height: Dimensions.listViewImgSize,
                       decoration: BoxDecoration(
                           borderRadius:
                               BorderRadius.circular(Dimensions.radius20),
                           color: Colors.white38,
                           image: DecorationImage(
+                              fit: BoxFit.cover,
                               image: AssetImage(
                                   "assets/images/la_plage_doree.jpg"))),
-                    )
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: Dimensions.listViewImgTextSize,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomRight:
+                                    Radius.circular(Dimensions.radius30),
+                                topRight: Radius.circular(Dimensions.radius30)),
+                            color: Colors.white),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: Dimensions.width10,
+                              right: Dimensions.width10),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                BigText(text: "La plage dorée"),
+                                SizedBox(height: Dimensions.height10,),
+                                SmallText(
+                                  text: "Un dîné avec une vue incroyable !",
+                                  color: AppColors.signColor,
+                                ),
+                                SizedBox(height: Dimensions.height10,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    IconAndTextWidget(
+                                        icon: Icons.circle_sharp,
+                                        text: "Normal",
+                                        color: AppColors.signColor,
+                                        iconColor: AppColors.iconColor1),
+                                    IconAndTextWidget(
+                                        icon: Icons.location_on,
+                                        text: "2 km",
+                                        color: AppColors.signColor,
+                                        iconColor: AppColors.mainColor),
+                                    IconAndTextWidget(
+                                        icon: Icons.access_time_rounded,
+                                        text: "32 mins",
+                                        color: AppColors.signColor,
+                                        iconColor: AppColors.iconColor2)
+                                  ],
+                                )
+                              ]),
+                        ),
+                      ),
+                    ),
                   ]),
                 );
               }),
