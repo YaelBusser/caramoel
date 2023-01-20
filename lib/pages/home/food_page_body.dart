@@ -1,4 +1,5 @@
 import 'package:caramoel/utils/dimensions.dart';
+import 'package:caramoel/widgets/app_column.dart';
 import 'package:caramoel/widgets/big_text.dart';
 import 'package:caramoel/widgets/icon_and_text_widget.dart';
 import 'package:caramoel/widgets/small_text.dart';
@@ -8,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-import '../colors.dart';
+import '../../utils/colors.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({super.key});
@@ -136,14 +137,19 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 BigText(text: "La plage dorée"),
-                                SizedBox(height: Dimensions.height10,),
+                                SizedBox(
+                                  height: Dimensions.height10,
+                                ),
                                 SmallText(
                                   text: "Un dîné avec une vue incroyable !",
                                   color: AppColors.signColor,
                                 ),
-                                SizedBox(height: Dimensions.height10,),
+                                SizedBox(
+                                  height: Dimensions.height10,
+                                ),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     IconAndTextWidget(
                                         icon: Icons.circle_sharp,
@@ -237,68 +243,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               child: Container(
                 padding: EdgeInsets.only(
                     top: Dimensions.height15, left: 15, right: 15),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      BigText(text: "La plage dorée"),
-                      SizedBox(
-                        height: Dimensions.height10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Wrap(
-                            children: List.generate(
-                                5,
-                                (index) => Icon(
-                                      Icons.star,
-                                      color: AppColors.mainColor,
-                                      size: 15,
-                                    )),
-                          ),
-                          SmallText(
-                            text: "4.5",
-                            color: AppColors.signColor,
-                          ),
-                          SmallText(
-                            text: "1250",
-                            color: AppColors.signColor,
-                          ),
-                          SmallText(
-                            text: "commentaires",
-                            color: AppColors.signColor,
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: Dimensions.height20,
-                      ),
-                      Row(
-                        children: [
-                          IconAndTextWidget(
-                              icon: Icons.circle_sharp,
-                              text: "Normal",
-                              color: AppColors.signColor,
-                              iconColor: AppColors.iconColor1),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          IconAndTextWidget(
-                              icon: Icons.location_on,
-                              text: "2 km",
-                              color: AppColors.signColor,
-                              iconColor: AppColors.mainColor),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          IconAndTextWidget(
-                              icon: Icons.access_time_rounded,
-                              text: "32 mins",
-                              color: AppColors.signColor,
-                              iconColor: AppColors.iconColor2)
-                        ],
-                      )
-                    ]),
+                child: AppColumn(text: "La plage dorée",),
               ),
             ),
           ),

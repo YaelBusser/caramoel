@@ -1,6 +1,8 @@
-import 'package:caramoel/home/main_food_page.dart';
+import 'package:caramoel/pages/home/main_food_page.dart';
+import 'package:caramoel/pages/restaurant/restaurant_details.dart';
 import 'package:flutter/material.dart';
 import "package:get/get.dart";
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: MainFoodPage(),
+      home: RestaurantDetails(),
     );
   }
 }

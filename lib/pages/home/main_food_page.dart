@@ -1,5 +1,5 @@
-import 'package:caramoel/colors.dart';
-import 'package:caramoel/home/food_page_body.dart';
+import 'package:caramoel/utils/colors.dart';
+import 'package:caramoel/pages/home/food_page_body.dart';
 import 'package:caramoel/utils/dimensions.dart';
 import 'package:caramoel/widgets/big_text.dart';
 import 'package:caramoel/widgets/small_text.dart';
